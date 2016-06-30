@@ -1,32 +1,38 @@
 {
-	"name":        "bloem",
-	"version":     "0.2.4",
-	"author":      "Sebastian Wiedenroth <wiedi@frubar.net>",
-	"description": "Bloom Filter using the FNV hash function",
-	"url":         "https://github.com/wiedi/node-bloem",
-	"main":        "bloem.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/wiedi/node-bloem.git"
-	},
-	"keywords": [
-		"bloom filter",
-		"scalable bloom filters"
-	],
-	"dependencies": {
-		"fnv": "0.1.x",
-		"bitbuffer": "0.1.x"
-	},
-	"devDependencies": {
-		"mocha": "1.8.x"
-	},
-	"scripts": {
-		"test": "mocha -u qunit -R list"
-	},
-	"licenses": [
-		{
-			"name": "MIT",
-			"url": "http://www.opensource.org/licenses/mit-license.php"
-		}
-	]
+  "name": "bloem",
+  "version": "0.3.0",
+  "author": "Sebastian Wiedenroth <wiedi@frubar.net>",
+  "description": "Bloom Filter using the FNV hash function",
+  "url": "https://github.com/wiedi/node-bloem",
+  "main": "bloem.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wiedi/node-bloem.git"
+  },
+  "keywords": [
+    "bloom filter",
+    "scalable bloom filters"
+  ],
+  "dependencies": {
+    "fnv": "git@github.com:achselschweisz/node-fnv.git#es6",
+    "bitbuffer": "git@github.com:achselschweisz/node-bitbuffer.git#es6"
+  },
+  "devDependencies": {
+    "changelog42": "0.9.0",
+    "eslint": "2.13.1",
+    "istanbul": "0.4.4",
+    "mocha": "2.5.3"
+  },
+  "scripts": {
+    "lint": "eslint ./",
+    "test": "npm run lint && istanbul cover _mocha -- ./test",
+    "log": "changelog42 --no-author --commit-url=https://github.com/skenqbx/module-template/commit",
+    "clean": "rm -rf node_modules/ && rm -rf coverage/ && rm -f npm-debug.log"
+  },
+  "licenses": [
+    {
+      "name": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
 }
